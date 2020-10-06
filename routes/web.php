@@ -22,3 +22,12 @@ Route::get('/', 'HomePageController@index');
 Route::get('/list', 'ListingPageController@index');
 
 Route::get('/details', 'DetailsPageController@index');
+
+Route::group(['prefix' => 'back'], function () {
+    Route::get('/', 'AdminPageController@index');
+    Route::get('/category', 'CategoriesController@index');
+    Route::get('/create', 'CreateController@index');
+    Route::get('/edit', 'EditController@index');
+});
+
+//Route::get('/adminpage', 'AdminPageController@index');
